@@ -1,277 +1,166 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Elvas Kibiwott — AWS & DevOps Engineer</title>
-  <meta name="description" content="Elvas Kibiwott — AWS & DevOps Engineer | Full-Stack Developer" />
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Simple icons (CDN) -->
-  <script src="https://kit.fontawesome.com/7c8b9b4c2a.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elvas Kibiwott - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#ff9900; --glass: rgba(255,255,255,0.03);
-      --maxw:1100px; --radius:12px; color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,-apple-system,"Helvetica Neue",Arial; background:linear-gradient(180deg,#071021 0%, #071827 100%); color:#e6eef8; -webkit-font-smoothing:antialiased}
-    .container{max-width:var(--maxw);margin:2rem auto;padding:1rem}
-
-    /* Header / Hero */
-    header.hero{background:linear-gradient(90deg, rgba(255,153,0,0.12), rgba(0,123,255,0.03)); padding:2.75rem;border-radius:14px;display:flex;gap:1.5rem;align-items:center}
-    .hero-left{flex:1}
-    .avatar{width:128px;height:128px;border-radius:16px;overflow:hidden;border:3px solid rgba(255,255,255,0.04)}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    h1{font-size:1.9rem;margin:0 0 .25rem 0;letter-spacing:-0.5px}
-    p.lead{margin:0;color:var(--muted)}
-    .cta{margin-top:1rem;display:flex;gap:.6rem}
-    .btn{background:var(--accent);color:#07203a;padding:.6rem .9rem;border-radius:10px;text-decoration:none;font-weight:600}
-    .btn.alt{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-
-    /* Grid */
-    .grid{display:grid;grid-template-columns: 1fr 360px;gap:1rem;margin-top:1.25rem}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-
-    /* Cards */
-    .card{background:var(--card);border-radius:12px;padding:1rem;border:1px solid rgba(255,255,255,0.02);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    h2.section{margin:0 0 1rem 0;font-size:1.1rem}
-
-    /* Skills */
-    .skills{display:flex;flex-wrap:wrap;gap:.5rem}
-    .chip{background:var(--glass);padding:.45rem .7rem;border-radius:999px;font-weight:600;color:var(--muted);border:1px solid rgba(255,255,255,.02)}
-
-    /* Projects */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    @media (max-width:900px){.projects{grid-template-columns:1fr}}
-    .project .meta{font-size:.85rem;color:var(--muted);margin-top:.45rem}
-    .badges{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.6rem}
-    .badge{font-size:.75rem;padding:.25rem .5rem;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
-
-    /* Experience list */
-    .timeline{display:flex;flex-direction:column;gap:.6rem}
-    .job{padding:.6rem;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
-    .job h3{margin:.1rem 0}
-    .small{font-size:.9rem;color:var(--muted)}
-
-    /* Certifications */
-    .certs{display:flex;gap:.6rem;flex-wrap:wrap}
-    .cert{background:linear-gradient(90deg, rgba(255,153,0,0.06), rgba(0,123,255,0.02));padding:.5rem .7rem;border-radius:10px;font-weight:700;color:#ffd1a6}
-
-    /* Contact */
-    .contact-list{display:flex;flex-direction:column;gap:.5rem}
-    .socials{display:flex;gap:.6rem;margin-top:.6rem}
-    .icon-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.45rem .7rem;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);text-decoration:none}
-
-    footer{margin-top:1.5rem;text-align:center;color:var(--muted);font-size:.9rem}
-
-    /* Top nav */
-    .topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem}
-    nav a{color:var(--muted);text-decoration:none;margin-left:.8rem}
-    .mode-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:.4rem .6rem;border-radius:8px;color:var(--muted)}
-
-    /* Resume link small */
-    .resume-small{display:inline-block;margin-left:.6rem;padding:.35rem .5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.03);color:var(--muted);text-decoration:none}
+    body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
+    header { background: #2c3e50; color: white; padding: 40px 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2.5em; }
+    header p { font-size: 1.2em; }
+    nav { text-align: center; margin-top: 20px; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 500; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    h2 { color: #2c3e50; margin-bottom: 20px; }
+    .experience, .education, .certifications, .skills, .achievements, .projects { margin-bottom: 50px; }
+    .job, .project-card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .job h3, .project-card h3 { margin-top: 0; color: #34495e; }
+    .job p, .project-card p { margin: 5px 0; }
+    .skills-list, .cert-list, .ach-list, .proj-stack { list-style: none; padding: 0; }
+    .skills-list li, .cert-list li, .ach-list li, .proj-stack li { background: #ecf0f1; margin: 5px 0; padding: 8px; border-radius: 5px; }
+    footer { background: #2c3e50; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    .contact a { color: #3498db; text-decoration: none; margin: 0 10px; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="topbar">
-      <div style="display:flex;align-items:center;gap:1rem">
-        <div style="font-weight:800;color:var(--accent)">ELVAS</div>
-        <div style="color:var(--muted)">AWS • DevOps • Networking</div>
-      </div>
-      <div>
-        <button class="mode-toggle" id="toggleMode"><i class="fa-solid fa-sun"></i> Theme</button>
-        <a href="#contact" class="resume-small">Contact</a>
-      </div>
+  <header>
+    <h1>Elvas Kibiwott</h1>
+    <p>TechnOps Engineer | Cloud & DevOps | Networking</p>
+    <nav>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="experience" class="experience">
+    <h2>Professional Experience</h2>
+    <div class="job">
+      <h3>TechnOps Engineer - Ahadi Wireless</h3>
+      <p><em>Nov 2024 – Present</em></p>
+      <ul>
+        <li><b>OpenShift/Kubernetes:</b> Deployed and managed production-grade clusters, reducing deployment time by 30% via Helm automation. Troubleshot pod crashes, network policies, and storage bottlenecks.</li>
+        <li><b>Infrastructure Automation:</b> Automated server provisioning with Terraform + Ansible, cutting setup time by 40%. Developed Python/Bash scripts for log analysis and Prometheus alerting.</li>
+        <li><b>Storage & Performance:</b> Configured NAS/SAN storage for PersistentVolumes. Optimized storage I/O and network fabric, resolving latency issues.</li>
+      </ul>
     </div>
 
-    <header class="hero card" role="banner">
-      <div class="grid">
-        <div class="hero-left">
-          <h1>Hi, I’m <span style="color:var(--accent)">Elvas Kibiwott</span></h1>
-          <p class="lead">AWS Cloud & DevOps Engineer • NOC & Systems Background • Full‑Stack Developer</p>
-          <div class="cta">
-            <a class="btn" href="#projects">View Projects</a>
-            <a class="btn alt" href="mailto:youremail@example.com">Get in touch</a>
-          </div>
+    <div class="job">
+      <h3>Network Specialist (PDTP Intern) - Kenya Revenue Authority</h3>
+      <p><em>Jan 2024 – Nov 2024</em></p>
+      <ul>
+        <li>Configured Cisco/Huawei routers/switches, reducing outages by 25%.</li>
+        <li>Monitored traffic via SolarWinds/Wireshark, fixing bandwidth bottlenecks.</li>
+        <li>Assisted in firewall policies and LAN/WAN segmentation (Fortinet, Palo Alto).</li>
+      </ul>
+    </div>
 
-          <div style="margin-top:1rem;color:var(--muted)">
-            <strong>Location:</strong> Nairobi, Kenya &nbsp; • &nbsp; <strong>Open to:</strong> Remote & Local roles
-          </div>
+    <div class="job">
+      <h3>IT Support Technician - Rift Valley Innovation Center</h3>
+      <p><em>May 2022 – Nov 2023</em></p>
+      <ul>
+        <li>Deployed LAN/WAN networks with VLANs, VPNs, and Wi-Fi APs.</li>
+        <li>Led CCTV/IP surveillance system installations, improving security.</li>
+      </ul>
+    </div>
+  </section>
 
-          <div style="margin-top:.9rem">
-            <div class="skills">
-              <span class="chip">AWS</span>
-              <span class="chip">Docker</span>
-              <span class="chip">Kubernetes</span>
-              <span class="chip">Terraform</span>
-              <span class="chip">Python</span>
-            </div>
-          </div>
-        </div>
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <p><b>BSc in Computer Science</b> – Chuka University (Dec 2021)</p>
+  </section>
 
-        <aside style="display:flex;flex-direction:column;align-items:center;gap:1rem">
-          <div class="avatar">
-            <!-- Replace the image src with your photo -->
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=60" alt="Photo of Elvas">
-          </div>
-          <div class="card" style="width:100%">
-            <h3 style="margin:0">Quick Stats</h3>
-            <p class="small" style="margin:.4rem 0">3+ years experience • NOC & Operations • Certifications: HCIP, Google IT</p>
-            <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-              <a class="icon-btn" href="https://github.com/elvaskibiwott" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a class="icon-btn" href="https://linkedin.com/in/elvaskibiwott" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </header>
+  <section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <ul class="cert-list">
+      <li>Kubernetes and Cloud Native Associate (KCNA)</li>
+      <li>CCNA (Cisco)</li>
+      <li>DevNet (Cisco)</li>
+      <li>HCIA Datacom (Huawei)</li>
+      <li>Google IT Support & Cybersecurity</li>
+      <li>Oracle Cloud Infrastructure – Generative AI</li>
+    </ul>
+  </section>
 
-    <main>
-      <section class="card" id="about">
-        <h2 class="section">About Me</h2>
-        <p>I build and operate reliable cloud systems. My background in network operations and systems support gives me an operational perspective when designing infrastructure — I focus on automation, observability, and security. I enjoy solving problems with code and infrastructure as code.</p>
-      </section>
+  <section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+    <ul class="skills-list">
+      <li><b>Cloud/Containers:</b> OpenShift, Kubernetes, Docker, AWS, Azure</li>
+      <li><b>Automation:</b> Ansible, Terraform, Helm, Python, Bash</li>
+      <li><b>Networking:</b> BGP, VLANs, VPNs, Cisco/Huawei devices</li>
+      <li><b>Storage:</b> SAN/NAS (NetApp, Dell EMC), iSCSI, NFS, CSI</li>
+      <li><b>Monitoring:</b> Prometheus, Grafana, ELK, SolarWinds</li>
+    </ul>
+  </section>
 
-      <div class="grid" style="margin-top:1rem">
-        <div>
-          <section class="card" id="projects">
-            <h2 class="section">Projects</h2>
-            <div class="projects">
-              <div class="project card">
-                <h3>Real‑Time Network Monitoring</h3>
-                <p class="meta">Docker • Kafka • ClickHouse • Redis • Python</p>
-                <p>Built a fault-tolerant pipeline to capture, process and visualize network telemetry in real-time. Includes Grafana dashboards and alerting rules.</p>
-                <div class="badges"><span class="badge">Kafka</span><span class="badge">Docker</span><span class="badge">Grafana</span></div>
-                <p style="margin-top:.6rem"><a href="https://github.com/elvaskibiwott" target="_blank">View repo</a></p>
-              </div>
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
 
-              <div class="project card">
-                <h3>SMS Tracking Workflow</h3>
-                <p class="meta">Kafka • Elasticsearch • Grafana • Docker</p>
-                <p>End-to-end SMS tracking to measure costs and delivery metrics. Uses Kafka for ingestion and ELK stack for storage/search.</p>
-                <div class="badges"><span class="badge">Elasticsearch</span><span class="badge">Kafka</span><span class="badge">Docker</span></div>
-                <p style="margin-top:.6rem"><a href="https://github.com/elvaskibiwott" target="_blank">View repo</a></p>
-              </div>
+    <div class="project-card">
+      <h3>Real-Time Monitoring System</h3>
+      <p>Designed and deployed a real-time monitoring platform to track network performance and service health.</p>
+      <ul class="proj-stack">
+        <li>Docker</li><li>Kubernetes</li><li>Kafka</li><li>ClickHouse</li><li>Redis</li><li>Grafana</li><li>Python</li>
+      </ul>
+      <p><a href="#">GitHub Repo</a></p>
+    </div>
 
-              <div class="project card">
-                <h3>Cloud Migration Lab</h3>
-                <p class="meta">AWS • EC2 • RDS • S3 • CloudFormation</p>
-                <p>Migrated a sample multi-tier app to AWS, automated with CloudFormation/Terraform, and configured ALB + autoscaling groups.</p>
-                <div class="badges"><span class="badge">AWS</span><span class="badge">CloudFormation</span><span class="badge">Terraform</span></div>
-                <p style="margin-top:.6rem"><a href="#">Read case study (coming soon)</a></p>
-              </div>
+    <div class="project-card">
+      <h3>CI/CD Pipeline for Microservices</h3>
+      <p>Implemented a GitLab-based CI/CD pipeline for a Python microservices project with automated testing, deployment, and rollback strategies.</p>
+      <ul class="proj-stack">
+        <li>GitLab CI/CD</li><li>Docker</li><li>Kubernetes</li><li>Helm</li><li>Python</li>
+      </ul>
+      <p><a href="#">GitHub Repo</a></p>
+    </div>
 
-              <div class="project card">
-                <h3>Personal Portfolio</h3>
-                <p class="meta">HTML • CSS • JS • GitHub Pages</p>
-                <p>Responsive portfolio site showcasing projects, experience and contact details — optimized for recruiters.</p>
-                <div class="badges"><span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">Netlify</span></div>
-                <p style="margin-top:.6rem"><a href="#" id="liveSiteLink">Live site</a></p>
-              </div>
-            </div>
-          </section>
+    <div class="project-card">
+      <h3>Cloud Infrastructure Automation</h3>
+      <p>Automated provisioning of multi-tier infrastructure on AWS using Terraform and Ansible.</p>
+      <ul class="proj-stack">
+        <li>AWS</li><li>Terraform</li><li>Ansible</li><li>Helm</li><li>Bash</li>
+      </ul>
+      <p><a href="#">GitHub Repo</a></p>
+    </div>
 
-          <section class="card" style="margin-top:1rem">
-            <h2 class="section">Experience</h2>
-            <div class="timeline">
-              <div class="job">
-                <h3>Network Operations Engineer</h3>
-                <div class="small">Rift Valley Innovation Center — 2022 – Present</div>
-                <p class="small">Monitored networks, responded to incidents, coordinated deployments, and improved system observability.</p>
-              </div>
+    <div class="project-card">
+      <h3>Secure Networking Lab</h3>
+      <p>Built a simulated enterprise network with Cisco & Huawei devices, firewalls, and VPNs to test segmentation and high availability.</p>
+      <ul class="proj-stack">
+        <li>Cisco IOS</li><li>Huawei</li><li>Palo Alto</li><li>Fortinet</li><li>GNS3/EVE-NG</li>
+      </ul>
+      <p><a href="#">GitHub Repo</a></p>
+    </div>
+  </section>
 
-              <div class="job">
-                <h3>Trainer & Dev</h3>
-                <div class="small">Rift Valley Innovation Center — 2020 – 2022</div>
-                <p class="small">Delivered web development & digital marketing training; built internal tools and supported lab learners.</p>
-              </div>
-            </div>
-          </section>
-        </div>
+  <section id="achievements" class="achievements">
+    <h2>Key Achievements</h2>
+    <ul class="ach-list">
+      <li>Boosted Kubernetes deployment speed by 30% via Helm charts and IaC.</li>
+      <li>Reduced manual errors by 40% by automating infra provisioning with Ansible/Terraform.</li>
+      <li>Enhanced cluster security with RBAC, NetworkPolicies, and PodSecurityPolicies.</li>
+      <li>Cut device downtime by 40% by implementing real-time Prometheus monitoring.</li>
+    </ul>
+  </section>
 
-        <aside>
-          <section class="card">
-            <h2 class="section">Skills</h2>
-            <div style="display:flex;flex-direction:column;gap:.6rem">
-              <div><strong>Cloud</strong><div style="color:var(--muted);margin-top:.25rem">AWS (EC2, S3, IAM, VPC, CloudFormation), Lambda</div></div>
-              <div><strong>Infrastructure</strong><div style="color:var(--muted);margin-top:.25rem">Terraform, Ansible, Docker, Kubernetes</div></div>
-              <div><strong>Monitoring</strong><div style="color:var(--muted);margin-top:.25rem">Prometheus, Grafana, ELK</div></div>
-              <div><strong>Languages</strong><div style="color:var(--muted);margin-top:.25rem">Python, JavaScript, Bash</div></div>
-            </div>
-          </section>
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p>
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </p>
+  </section>
 
-          <section class="card" style="margin-top:1rem">
-            <h2 class="section">Certifications</h2>
-            <div class="certs">
-              <div class="cert">Huawei HCIA</div>
-              <div class="cert">Cisco  CCNA</div>
-              <div class="cert">Andela KCIA</div>
-              <div class="cert">Google IT Support</div>
-              <div class="cert">Google Cybersecurity</div>
-              <div class="cert">AWS Certified (in progress)</div>
-            </div>
-          </section>
-
-          <section class="card" id="contact" style="margin-top:1rem">
-            <h2 class="section">Contact</h2>
-            <div class="contact-list">
-              <div class="small">Email: <a href="mailto:elvaskibiwott@gmail.com">elvaskibiwott@gmail.com</a></div>
-              <div class="small">LinkedIn: <a href="https://linkedin.com/in/elvaskibiwott" target="_blank">linkedin.com/in/elvaskibiwott</a></div>
-              <div class="small">GitHub: <a href="https://github.com/elvas254" target="_blank">github.com/elvas254</a></div>
-            </div>
-            <div class="socials">
-              <a class="icon-btn" href="https://github.com/elvas254" target="_blank"><i class="fa-brands fa-github"></i></a>
-              <a class="icon-btn" href="https://linkedin.com/in/elvaskibiwott" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              <a class="icon-btn" href="mailto:elvaskibiwott@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-          </section>
-        </aside>
-      </div>
-
-      <section class="card" style="margin-top:1rem">
-        <h2 class="section">Open to Roles</h2>
-        <p class="small">Cloud Engineer • AWS Solutions Architect • DevOps Engineer • Site Reliability Engineer (SRE) — Open to remote and hybrid roles.</p>
-      </section>
-
-    </main>
-
-    <footer>
-      <div class="small">© 2025 Elvas Kibiwott</div>
-    </footer>
-  </div>
-
-  <script>
-    // Small interactions: theme toggle (light/dark simulation)
-    const toggle = document.getElementById('toggleMode');
-    let isLight = false;
-    toggle.addEventListener('click', ()=>{
-      if(!isLight){
-        document.documentElement.style.setProperty('--bg','#f7fafc');
-        document.documentElement.style.setProperty('--card','#ffffff');
-        document.documentElement.style.setProperty('--muted','#4b5563');
-        document.documentElement.style.setProperty('--accent','#1f6feb');
-        document.body.style.color = '#0b1220';
-        isLight = true;
-        toggle.innerHTML = '<i class="fa-solid fa-moon"></i> Theme';
-      } else {
-        // revert to dark
-        document.documentElement.style.setProperty('--bg','#0f1724');
-        document.documentElement.style.setProperty('--card','#0b1220');
-        document.documentElement.style.setProperty('--muted','#94a3b8');
-        document.documentElement.style.setProperty('--accent','#ff9900');
-        document.body.style.color = '#e6eef8';
-        isLight = false;
-        toggle.innerHTML = '<i class="fa-solid fa-sun"></i> Theme';
-      }
-    });
-
-    // Replace live site link with current origin if hosted
-    const live = document.getElementById('liveSiteLink');
-    if(live) live.href = window.location.href;
-  </script>
+  <footer>
+    <p>&copy; 2025 Elvas Kibiwott. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
