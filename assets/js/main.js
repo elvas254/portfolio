@@ -166,3 +166,28 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(skillsSection);
   }
 });
+
+function animateEducationOnScroll() {
+  const educationItems = document.querySelectorAll('.education-item');
+  
+  educationItems.forEach(item => {
+    const itemPosition = item.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+    
+    if (itemPosition < screenPosition) {
+      item.classList.add('visible');
+    }
+  });
+}
+
+// Call this function in your scroll event listener
+window.addEventListener('scroll', function() {
+  animateEducationOnScroll();
+  // Your other scroll functions...
+});
+
+// Also call on page load
+document.addEventListener('DOMContentLoaded', function() {
+  animateEducationOnScroll();
+  // Your other DOM loaded functions...
+});
