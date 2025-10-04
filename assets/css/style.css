@@ -801,7 +801,220 @@ ul {
     padding: 20px;
   }
 }
+/* ======= CV Download Section ======= */
+#cv-download {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--surface) 0%, #252525 100%);
+  position: relative;
+  overflow: hidden;
+}
 
+#cv-download:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(187, 134, 252, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(3, 218, 198, 0.05) 0%, transparent 50%);
+}
+
+.cv-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cv-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cv-text p {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cv-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cv-feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cv-feature:hover {
+  background: rgba(187, 134, 252, 0.1);
+  transform: translateX(10px);
+  border-color: var(--primary);
+}
+
+.cv-feature i {
+  color: var(--primary);
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}
+
+.cv-feature span {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cv-action {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cv-download-btn {
+  padding: 18px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-download-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cv-download-btn:hover:before {
+  left: 100%;
+}
+
+.cv-download-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 15px 30px rgba(187, 134, 252, 0.4),
+    0 0 50px rgba(187, 134, 252, 0.2);
+}
+
+.cv-file-info {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cv-file-info i {
+  color: var(--secondary);
+  margin-right: 8px;
+}
+
+/* CV Download Animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(187, 134, 252, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(187, 134, 252, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(187, 134, 252, 0);
+  }
+}
+
+.cv-download-btn {
+  animation: pulse 2s infinite;
+}
+
+.cv-download-btn:hover {
+  animation: none;
+}
+
+/* Responsive Design for CV Section */
+@media (max-width: 992px) {
+  .cv-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .cv-text h2 {
+    font-size: 2.2rem;
+  }
+  
+  .cv-features {
+    align-items: center;
+  }
+  
+  .cv-feature {
+    justify-content: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #cv-download {
+    padding: 60px 0;
+  }
+  
+  .cv-text h2 {
+    font-size: 2rem;
+  }
+  
+  .cv-text p {
+    font-size: 1.1rem;
+  }
+  
+  .cv-download-btn {
+    padding: 16px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cv-features {
+    gap: 10px;
+  }
+  
+  .cv-feature {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .cv-download-btn {
+    padding: 14px 25px;
+  }
+}
 /* ======= Projects Section ======= */
 .projects-grid {
   display: grid;

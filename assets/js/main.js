@@ -191,3 +191,37 @@ document.addEventListener('DOMContentLoaded', function() {
   animateEducationOnScroll();
   // Your other DOM loaded functions...
 });
+// CV Download Section Animation
+function animateCVSection() {
+  const cvSection = document.getElementById('cv-download');
+  if (!cvSection) return;
+  
+  const sectionPosition = cvSection.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.3;
+  
+  if (sectionPosition < screenPosition) {
+    cvSection.style.opacity = '1';
+    cvSection.style.transform = 'translateY(0)';
+  }
+}
+
+// Initialize CV section animation
+document.addEventListener('DOMContentLoaded', function() {
+  const cvSection = document.getElementById('cv-download');
+  if (cvSection) {
+    cvSection.style.opacity = '0';
+    cvSection.style.transform = 'translateY(30px)';
+    cvSection.style.transition = 'all 0.6s ease';
+  }
+  
+  // Add to scroll event listener
+  window.addEventListener('scroll', animateCVSection);
+});
+
+// CV Download Tracking (optional)
+document.querySelectorAll('.cv-download-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    // You can add analytics tracking here
+    console.log('CV downloaded');
+  });
+});
